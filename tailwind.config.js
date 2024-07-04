@@ -77,6 +77,7 @@ export const theme = {
     },
     fontFamily: {
       kelp: ["Kelpo", "sans-serif"],
+      jar: ["Plus Jakarta Sans", "sans-serif"],
     },
   },
 };
