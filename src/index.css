@@ -8,9 +8,10 @@
   box-sizing: border-box;
 }
 
-.hero {
+home {
   scroll-behavior: auto;
   overflow: hidden;
+  font-family: "Kelpo", sans-serif;
   background-size: cover;
   /* overflow-y: scroll; */
   background-image: url("/images/hero.png");
@@ -105,47 +106,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* FONTS */
 @font-face {
-  font-family: "Aeonik";
-  src: url("../fonts/Aeonik/AeonikTRIAL-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "AeonikBold";
-  src: url("../fonts/Aeonik/AeonikTRIAL-Bold.otf") format("truetype");
-}
-
-/* SLIDER */
-
-.sliderContainer {
-  position: absolute;
-  top: calc(100vh - 500px);
-  overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.slider {
-  position: relative;
-  white-space: nowrap;
-}
-
-.slider p {
-  position: relative;
-  margin: 0px;
-  color: white;
-  font-size: 230px;
-  font-weight: 500;
-  padding-right: 50px;
-  @media screen and (max-width: 768px) {
-    font-size: 130px;
-  }
-}
-
-.slider p:nth-of-type(2) {
-  position: absolute;
-  left: 100%;
-  top: 0;
+  font-family: "Kelpo";
+  src: url("../fonts/Kelpo/Kelpo.otf") format("opentype");
 }
