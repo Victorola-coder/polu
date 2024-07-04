@@ -8,15 +8,15 @@
   box-sizing: border-box;
 }
 
-home {
+html {
   scroll-behavior: auto;
-  overflow: hidden;
   font-family: "Kelpo", sans-serif;
-  background-size: cover;
+  background-size: center;
   /* overflow-y: scroll; */
-  background-image: url("/images/hero.png");
+  background-image: url("/images/bg.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-color: white;
+  background-position: center top;
 }
 
 body::-webkit-scrollbar {
