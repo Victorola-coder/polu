@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* tokens mirror the figma variables (colour/primary/default, colour/neutral/50, ...) */
+@theme {
+  --color-primary: #9f79ff;
+  --color-primary-600: #916ee8;
+  --color-primary-50: #f5f1ff;
+
+  --color-secondary: #ffbc01;
+  --color-secondary-200: #ffe08a;
+
+  --color-ink: #1e1e1e;
+  --color-neutral-50: #f7f7f7;
+  --color-neutral-100: #e7e7e7;
+  --color-neutral-300: #cbcbcb;
+  --color-neutral-400: #b2b2b2;
+  --color-neutral-600: #a2a2a2;
+  --color-neutral-700: #7e7e7e;
+
+  --color-success: #4fc458;
+  --color-success-50: #edf9ee;
+
+  /* athletics is the design font (paid). it's used when installed or added to
+     src/app/fonts; plus jakarta sans is the free fallback */
+  --font-sans: "Athletics", var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 0 1px 0 rgb(0 0 0 / 0.1), 0 4px 24px 1px rgb(0 0 0 / 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  ::selection {
+    @apply bg-primary text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* type styles from figma: body/rg, body/sm, heading/h5 */
+@utility text-body {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.16px;
+}
+
+@utility text-body-sm {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+}
+
+@utility text-h5 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
 }
