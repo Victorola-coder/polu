@@ -26,7 +26,7 @@ export function OrderTicket({
         <p className="text-body font-bold whitespace-nowrap text-ink">{title}</p>
         <p className="text-xs font-bold text-ink">{qty}</p>
       </div>
-      <span className="rounded-full border-[0.5px] border-ink bg-white px-4 py-2 text-sm font-bold text-ink">
+      <span className="shrink-0 rounded-full border-[0.5px] border-ink bg-white px-4 py-2 text-sm font-bold whitespace-nowrap text-ink">
         Place order
       </span>
     </div>
