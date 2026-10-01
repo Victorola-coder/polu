@@ -25,12 +25,12 @@ type Common = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-bold text-body transition-colors duration-200 cursor-pointer disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
+  "group inline-flex items-center justify-center gap-2 font-bold text-body transition-colors duration-200 cursor-pointer disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 function Content({ icon, loading, children }: Omit<Common, "variant" | "className">) {
   if (loading) {
     return (
-      <span className="flex gap-1 py-[7px]" aria-label="Loading">
+      <span className="flex gap-1 py-1.75" aria-label="Loading">
         {[0, 1, 2].map((i) => (
           <span
             key={i}
@@ -43,11 +43,33 @@ function Content({ icon, loading, children }: Omit<Common, "variant" | "classNam
   }
   return (
     <>
-      {icon === "arrow-left" && <Image src="/icons/arrow-left.svg" alt="" width={16} height={16} />}
+      {icon === "arrow-left" && <Arrow flip />}
       {icon === "google" && <Image src="/icons/google.svg" alt="" width={16} height={16} />}
       {children}
-      {icon === "arrow-right" && <Image src="/icons/arrow-right.svg" alt="" width={16} height={16} />}
+      {icon === "arrow-right" && <Arrow />}
     </>
+  );
+}
+
+// same path as public/icons/arrow-right.svg, drawn in currentColor so it follows the text
+function Arrow({ flip }: { flip?: boolean }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden
+      className={cn("transition-transform group-hover:translate-x-0.5", flip && "rotate-180")}
+    >
+      <path
+        d="M2.66667 8H13.3333M9.33333 12L13.3333 8L9.33333 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
