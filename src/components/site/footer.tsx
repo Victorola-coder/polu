@@ -16,7 +16,7 @@ const columns = [
     links: [
       { href: "/about", label: "About us" },
       { href: "/become-a-host", label: "Become a host" },
-      { href: "https://polu.ng/build", label: "Careers" },
+      { href: "/about#build", label: "Careers" },
       { href: "/#how-it-works", label: "How it works" },
     ],
   },
