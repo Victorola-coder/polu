@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { athletics, kelpo } from "./fonts";
 import "./globals.css";
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://polu.ng"),
@@ -27,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={jakarta.variable}>
+    <html lang="en" className={`${athletics.variable} ${kelpo.variable}`}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

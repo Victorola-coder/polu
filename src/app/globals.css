@@ -20,9 +20,8 @@
   --color-success: #4fc458;
   --color-success-50: #edf9ee;
 
-  /* athletics is the design font (paid). it's used when installed or added to
-     src/app/fonts; plus jakarta sans is the free fallback */
-  --font-sans: "Athletics", var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-athletics), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-kelpo), var(--font-athletics), sans-serif;
 
   --shadow-card: 0 0 1px 0 rgb(0 0 0 / 0.1), 0 4px 24px 1px rgb(0 0 0 / 0.1);
 }
