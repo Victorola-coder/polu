@@ -26,8 +26,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
-
   return (
     <header
       className={cn(
@@ -83,7 +81,7 @@ export function Nav() {
           <ul className="flex flex-col gap-1">
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="block py-3 text-lg font-bold text-ink">
+                <Link href={l.href} onClick={() => setOpen(false)} className="block py-3 text-lg font-bold text-ink">
                   {l.label}
                 </Link>
               </li>
