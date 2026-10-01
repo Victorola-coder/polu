@@ -11,9 +11,18 @@ export const metadata: Metadata = {
   description:
     "Order custom posters, stickers and branded prints, track every stage and get them delivered to your doorstep.",
   keywords: ["polu", "printing", "stickers", "posters", "branding", "nigeria"],
+  applicationName: "Polu",
+  authors: [{ name: "Polu Technology Limited" }],
   openGraph: {
     type: "website",
+    locale: "en_NG",
     siteName: "Polu",
+    title: "Polu - One destination for all prints",
+    description:
+      "Order custom posters, stickers and branded prints, track every stage and get them delivered to your doorstep.",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Polu - One destination for all prints",
     description:
       "Order custom posters, stickers and branded prints, track every stage and get them delivered to your doorstep.",

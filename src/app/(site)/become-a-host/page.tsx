@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   title: "Become a host",
   description:
     "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders.",
+  openGraph: { title: "Become a host - Polu", description: "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders." },
+  twitter: { title: "Become a host - Polu", description: "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders." },
 };
 
 const benefits = [

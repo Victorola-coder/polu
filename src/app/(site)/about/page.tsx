@@ -6,7 +6,10 @@ import { ButtonLink } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Polu Technology Limited is revolutionising printing services in Nigeria.",
+  description:
+    "Polu Technology Limited is revolutionising printing services in Nigeria.",
+  openGraph: { title: "About - Polu", description: "Polu Technology Limited is revolutionising printing services in Nigeria." },
+  twitter: { title: "About - Polu", description: "Polu Technology Limited is revolutionising printing services in Nigeria." },
 };
 
 const sides = [
