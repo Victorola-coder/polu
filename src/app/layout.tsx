@@ -3,7 +3,8 @@ import { athletics, kelpo } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://polu.ng"),
+  // swap for the real domain once there is one (or set NEXT_PUBLIC_SITE_URL)
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://polu-rho.vercel.app"),
   title: {
     default: "Polu - One destination for all prints",
     template: "%s - Polu",

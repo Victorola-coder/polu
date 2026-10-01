@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Cta } from "@/components/site/cta";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ButtonLink } from "@/components/ui/button";
 import { Scallop } from "@/components/site/scallop";
 import { HostStories } from "./host-stories";
 
-export const metadata: Metadata = {
-  title: "Become a host",
-  description:
-    "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders.",
-  openGraph: { title: "Become a host - Polu", description: "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders." },
-  twitter: { title: "Become a host - Polu", description: "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders." },
-};
+export const metadata: Metadata = pageMetadata(
+  "Become a host",
+  "Own a print shop or ride for deliveries? Join Polu as a host and get a steady stream of print orders.",
+);
 
 const benefits = [
   {

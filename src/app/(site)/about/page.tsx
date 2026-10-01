@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Scallop } from "@/components/site/scallop";
 import { Cta } from "@/components/site/cta";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ButtonLink } from "@/components/ui/button";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Polu Technology Limited is revolutionising printing services in Nigeria.",
-  openGraph: { title: "About - Polu", description: "Polu Technology Limited is revolutionising printing services in Nigeria." },
-  twitter: { title: "About - Polu", description: "Polu Technology Limited is revolutionising printing services in Nigeria." },
-};
+export const metadata: Metadata = pageMetadata(
+  "About",
+  "Polu Technology Limited is revolutionising printing services in Nigeria.",
+);
 
 const sides = [
   {
