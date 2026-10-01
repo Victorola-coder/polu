@@ -27,6 +27,26 @@
   --shadow-card: 0 0 1px 0 rgb(0 0 0 / 0.1), 0 4px 24px 1px rgb(0 0 0 / 0.1);
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer base {
   body {
     @apply bg-white font-sans text-ink antialiased;
