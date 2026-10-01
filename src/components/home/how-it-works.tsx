@@ -15,7 +15,7 @@ export function HowItWorks() {
         eyebrow="How it works"
         title="From file to doorstep in five steps"
       />
-      <ol className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-8 sm:mt-16 sm:gap-y-14">
+      <ol data-pop className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-8 sm:mt-16 sm:gap-y-14">
         {steps.map((s, i) => (
           <li
             key={s.title}

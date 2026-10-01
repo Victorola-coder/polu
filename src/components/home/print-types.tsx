@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/site/section-heading";
-import { Scallop } from "./hero";
+import { Scallop } from "@/components/site/scallop";
 
 const items = [
   {
@@ -72,7 +72,7 @@ export function PrintTypes() {
         title="If it can be printed, Polu can print it"
         caption="Start with the essentials. More products land every month."
       />
-      <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:gap-6 lg:grid-cols-4">
+      <ul data-pop className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:gap-6 lg:grid-cols-4">
         {items.map((item) => (
           <li key={item.name}>
             <Link href="/signup" className="group flex flex-col gap-3 sm:gap-4">

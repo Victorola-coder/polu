@@ -42,10 +42,10 @@ export function Features() {
                 i % 2 === 1 && "lg:[&>*:first-child]:order-2",
               )}
             >
-              <div className="flex items-center justify-center overflow-hidden rounded-2xl bg-primary px-5 py-10 sm:p-8 lg:aspect-[1.6]">
+              <div data-tilt className="flex items-center justify-center overflow-hidden rounded-2xl bg-primary px-5 py-10 sm:p-8 lg:aspect-[1.6]">
                 {f.visual}
               </div>
-              <div className="flex max-w-[460px] flex-col gap-3">
+              <div data-reveal className="flex max-w-[460px] flex-col gap-3">
                 <span className="text-body font-bold text-primary">0{i + 1}</span>
                 <h3 className="text-2xl leading-8 font-extrabold text-ink sm:text-[28px] sm:leading-9">{f.title}</h3>
                 <p className="text-body text-neutral-700 sm:text-lg sm:leading-7">{f.body}</p>

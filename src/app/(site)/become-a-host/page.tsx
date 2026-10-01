@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cta } from "@/components/site/cta";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ButtonLink } from "@/components/ui/button";
-import { Scallop } from "@/components/home/hero";
+import { Scallop } from "@/components/site/scallop";
 import { HostStories } from "./host-stories";
 
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ export default function BecomeAHostPage() {
     <>
       <section className="px-3 sm:px-6">
         <div className="relative mx-auto grid max-w-[1392px] items-center gap-10 overflow-hidden rounded-[28px] bg-primary p-3 sm:px-12 sm:py-16 lg:py-20 xl:grid-cols-[1fr_1.1fr] xl:py-24">
-          <Scallop className="absolute -right-24 -bottom-40 size-[460px] text-white/10" />
+          <div data-spin="120" className="absolute -right-24 -bottom-40"><Scallop className="size-[460px] text-white/10" /></div>
 
           <div className="relative flex max-w-[680px] flex-col gap-6 rounded-[20px] bg-white p-6 shadow-card sm:p-10 xl:max-w-none">
             <span className="self-start rounded-full bg-secondary-200 px-3 py-1 text-body-sm font-bold">
@@ -83,7 +83,7 @@ export default function BecomeAHostPage() {
             </div>
           </div>
 
-          <div className="relative hidden xl:block">
+          <div data-parallax="0.12" className="relative hidden xl:block">
             <QueueMock />
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function BecomeAHostPage() {
           eyebrow="Why host with Polu"
           title="Everything you need to grow"
         />
-        <ul className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        <ul data-stagger className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {benefits.map((b) => (
             <li key={b.title} className="flex flex-col gap-4 rounded-2xl border border-neutral-100 p-6">
               <span className="flex size-12 items-center justify-center rounded-xl bg-primary-50 text-primary">
@@ -113,7 +113,7 @@ export default function BecomeAHostPage() {
 
       <section id="faq" className="mx-auto max-w-[1240px] scroll-mt-28 px-6 py-16 sm:py-24">
         <SectionHeading align="left" eyebrow="FAQ" title="Questions, answered" />
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2">
+        <div data-stagger className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2">
           {faqs.map((f) => (
             <details
               key={f.q}

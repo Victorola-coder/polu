@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Scallop } from "@/components/home/hero";
+import { Scallop } from "@/components/site/scallop";
 import { Cta } from "@/components/site/cta";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ButtonLink } from "@/components/ui/button";
@@ -52,7 +52,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="mx-auto max-w-[1240px] px-6 pt-10 pb-14 sm:pt-24 sm:pb-20">
-        <div className="flex max-w-[860px] flex-col gap-6">
+        <div data-stagger className="flex max-w-[860px] flex-col gap-6">
           <span className="self-start rounded-full bg-secondary-200 px-3 py-1 text-body-sm font-bold">
             About Polu
           </span>
@@ -71,8 +71,8 @@ export default function AboutPage() {
       </section>
 
       <section className="px-3 sm:px-6">
-        <div className="relative mx-auto grid max-w-[1392px] gap-10 overflow-hidden rounded-[28px] bg-primary px-6 py-12 text-white sm:px-12 sm:py-16 lg:grid-cols-2 lg:py-20">
-          <Scallop className="absolute -top-20 -right-16 size-80 text-white/10" />
+        <div data-reveal className="relative mx-auto grid max-w-[1392px] gap-10 overflow-hidden rounded-[28px] bg-primary px-6 py-12 text-white sm:px-12 sm:py-16 lg:grid-cols-2 lg:py-20">
+          <div data-spin="140" className="absolute -top-20 -right-16"><Scallop className="size-80 text-white/10" /></div>
           <h2 className="relative text-[28px] leading-[1.15] font-extrabold sm:text-[36px] lg:text-[44px]">
             Why we started Polu
           </h2>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-[1240px] px-6 py-16 sm:py-24">
         <SectionHeading eyebrow="Who we serve" title="Built for every side of the print" />
-        <ul className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-3">
+        <ul data-pop className="mt-10 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-3">
           {sides.map((s) => (
             <li key={s.who} className={`flex flex-col gap-3 rounded-2xl p-6 sm:p-8 ${s.tone}`}>
               <h3 className="text-2xl font-extrabold">{s.who}</h3>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       <section className="bg-neutral-50 py-16 sm:py-24">
         <div className="mx-auto max-w-[1240px] px-6">
           <SectionHeading eyebrow="What we believe" title="Our values" />
-          <ul className="mt-10 grid gap-x-10 gap-y-8 sm:mt-14 sm:gap-y-10 md:grid-cols-2">
+          <ul data-stagger className="mt-10 grid gap-x-10 gap-y-8 sm:mt-14 sm:gap-y-10 md:grid-cols-2">
             {values.map((v, i) => (
               <li key={v.title} className="flex gap-5">
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-xl font-extrabold text-primary shadow-card">
@@ -121,7 +121,7 @@ export default function AboutPage() {
       </section>
 
       <section id="build" className="mx-auto max-w-[1240px] scroll-mt-28 px-6 py-16 sm:py-24">
-        <div className="grid items-center gap-10 rounded-[28px] border-2 border-ink p-6 sm:p-12 lg:grid-cols-[1.2fr_1fr]">
+        <div data-tilt className="grid items-center gap-10 rounded-[28px] border-2 border-ink p-6 sm:p-12 lg:grid-cols-[1.2fr_1fr]">
           <div className="flex flex-col gap-5">
             <span className="self-start rounded-full bg-ink px-3 py-1 text-body-sm font-bold text-white">
               Call for builders
@@ -137,7 +137,7 @@ export default function AboutPage() {
               Apply now
             </ButtonLink>
           </div>
-          <ul className="flex flex-wrap gap-2">
+          <ul data-pop className="flex flex-wrap gap-2">
             {roles.map((r) => (
               <li key={r} className="rounded-full bg-primary-50 px-4 py-2 text-body-sm font-bold text-primary">
                 {r}

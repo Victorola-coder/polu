@@ -50,7 +50,6 @@ export default async function OpengraphImage() {
           <path d={star} fill="rgba(255,255,255,0.12)" />
         </svg>
 
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={logoSrc} width={186} height={100} alt="" />
 
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>

@@ -30,7 +30,7 @@ export function Testimonials() {
     <section className="bg-neutral-50 py-16 sm:py-24">
       <div className="mx-auto max-w-[920px] px-6">
         <SectionHeading eyebrow="Testimonials" title="People love printing with Polu" />
-        <ul className="mt-10 flex flex-col gap-4 sm:mt-14 sm:gap-6">
+        <ul data-stagger className="mt-10 flex flex-col gap-4 sm:mt-14 sm:gap-6">
           {quotes.map((q, i) => (
             <li key={i} className="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-card sm:flex-row sm:gap-5 sm:p-8">
               <div
