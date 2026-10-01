@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ui/button";
 export function Hero() {
   return (
     <section className="px-3 sm:px-6">
-      <div className="relative mx-auto max-w-[1392px] overflow-hidden rounded-[28px] bg-primary px-6 pt-20 pb-24 sm:pt-28 sm:pb-32">
+      <div className="relative mx-auto max-w-[1392px] overflow-hidden rounded-[28px] bg-primary px-5 pt-14 pb-16 sm:px-6 sm:pt-28 sm:pb-32">
         {/* soft brand shapes */}
         <Scallop className="absolute -top-24 -left-20 size-[340px] text-white/10" />
         <Scallop className="absolute -right-24 -bottom-32 size-[420px] text-white/10" />
@@ -26,14 +26,14 @@ export function Hero() {
           <span className="rounded-full border border-white/40 px-4 py-1.5 text-body-sm font-bold text-white">
             Stickers · Posters · Brochures · Merch
           </span>
-          <h1 className="text-[44px] leading-[1.02] font-extrabold tracking-tight text-white sm:text-[72px]">
+          <h1 className="text-[40px] leading-[1.04] font-extrabold tracking-tight text-balance text-white sm:text-[56px] lg:text-[72px]">
             One destination for all your prints
           </h1>
-          <p className="max-w-[560px] text-lg leading-7 text-white/85">
+          <p className="max-w-[560px] text-body text-white/85 sm:text-lg sm:leading-7">
             Upload your design, pick your size and finish, and a vetted local printer brings it to
             life. Track every stage until it lands at your door.
           </p>
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <ButtonLink href="/signup" variant="light" icon="arrow-right">
               Start an order
             </ButtonLink>

@@ -13,14 +13,14 @@ export function Cta({
   href: string;
 }) {
   return (
-    <section className="px-3 py-24 sm:px-6">
-      <div className="relative mx-auto flex max-w-[1240px] flex-col items-center gap-6 overflow-hidden rounded-[28px] bg-secondary px-6 py-20 text-center">
+    <section className="px-3 py-16 sm:py-24 sm:px-6">
+      <div className="relative mx-auto flex max-w-[1240px] flex-col items-center gap-6 overflow-hidden rounded-[28px] bg-secondary px-6 py-14 text-center sm:py-20">
         <Scallop className="absolute -top-16 -right-10 size-60 text-white/30" />
         <Scallop className="absolute -bottom-20 -left-12 size-72 text-white/30" />
-        <h2 className="relative max-w-[640px] text-[36px] leading-[1.1] font-extrabold tracking-tight text-ink sm:text-[52px]">
+        <h2 className="relative max-w-[640px] text-[32px] leading-[1.1] font-extrabold tracking-tight text-balance text-ink sm:text-[44px] lg:text-[52px]">
           {title}
         </h2>
-        <p className="relative max-w-[480px] text-lg leading-7 text-ink/80">{caption}</p>
+        <p className="relative max-w-[480px] text-body text-ink/80 sm:text-lg sm:leading-7">{caption}</p>
         <ButtonLink href={href} variant="dark" icon="arrow-right" className="relative mt-2">
           {cta}
         </ButtonLink>

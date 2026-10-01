@@ -36,12 +36,12 @@ export function HostStories() {
   const go = (i: number) => track.current?.scrollTo({ left: i * track.current.clientWidth, behavior: "smooth" });
 
   return (
-    <section className="bg-neutral-50 py-24">
+    <section className="bg-neutral-50 py-16 sm:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
         <SectionHeading eyebrow="Host stories" title="Hosts growing with Polu" />
         <ul
           ref={track}
-          className="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 flex snap-x sm:mt-14 snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {stories.map((s, i) => (
             <li
@@ -55,7 +55,7 @@ export function HostStories() {
                   <p className="text-body-sm text-neutral-600">{s.role}</p>
                 </div>
               </div>
-              <div className={cn("w-24 shrink-0", s.tone)} aria-hidden />
+              <div className={cn("w-3 shrink-0 sm:w-16 lg:w-24", s.tone)} aria-hidden />
             </li>
           ))}
         </ul>

@@ -66,24 +66,26 @@ const items = [
 
 export function PrintTypes() {
   return (
-    <section className="mx-auto max-w-[1240px] px-6 py-24">
+    <section className="mx-auto max-w-[1240px] px-6 py-16 sm:py-24">
       <SectionHeading
         eyebrow="What you can print"
         title="If it can be printed, Polu can print it"
         caption="Start with the essentials. More products land every month."
       />
-      <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:mt-14 sm:gap-6 lg:grid-cols-4">
         {items.map((item) => (
           <li key={item.name}>
-            <Link href="/signup" className="group flex flex-col gap-4">
+            <Link href="/signup" className="group flex flex-col gap-3 sm:gap-4">
               <div
                 className={`flex aspect-square items-center justify-center overflow-hidden rounded-2xl ${item.bg} transition-transform duration-300 group-hover:-translate-y-1`}
               >
-                <div className="transition-transform duration-300 group-hover:scale-105">{item.art}</div>
+                <div className="scale-[.6] transition-transform duration-300 group-hover:scale-[.65] sm:scale-100 sm:group-hover:scale-105">
+                  {item.art}
+                </div>
               </div>
               <div>
-                <p className="text-xl leading-7 font-bold text-ink">{item.name}</p>
-                <p className="text-body text-neutral-700">{item.caption}</p>
+                <p className="text-body font-bold text-ink sm:text-xl sm:leading-7">{item.name}</p>
+                <p className="text-body-sm text-neutral-700 sm:text-body">{item.caption}</p>
               </div>
             </Link>
           </li>

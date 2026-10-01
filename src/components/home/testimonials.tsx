@@ -27,14 +27,14 @@ const quotes = [
 
 export function Testimonials() {
   return (
-    <section className="bg-neutral-50 py-24">
+    <section className="bg-neutral-50 py-16 sm:py-24">
       <div className="mx-auto max-w-[920px] px-6">
         <SectionHeading eyebrow="Testimonials" title="People love printing with Polu" />
-        <ul className="mt-14 flex flex-col gap-6">
+        <ul className="mt-10 flex flex-col gap-4 sm:mt-14 sm:gap-6">
           {quotes.map((q, i) => (
-            <li key={i} className="flex gap-5 rounded-2xl bg-white p-6 shadow-card sm:p-8">
+            <li key={i} className="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-card sm:flex-row sm:gap-5 sm:p-8">
               <div
-                className={`flex size-14 shrink-0 items-center justify-center rounded-full text-lg font-extrabold text-white ${q.color}`}
+                className={`flex size-12 shrink-0 items-center justify-center rounded-full text-base font-extrabold text-white sm:size-14 sm:text-lg ${q.color}`}
                 aria-hidden
               >
                 {q.name.split(" ").map((n) => n[0].toUpperCase()).join("")}
@@ -48,7 +48,7 @@ export function Testimonials() {
                     <span className="text-neutral-100">{"★".repeat(5 - q.rating)}</span>
                   </span>
                 </div>
-                <p className="text-lg leading-7 text-neutral-700">“{q.quote}”</p>
+                <p className="text-body text-neutral-700 sm:text-lg sm:leading-7">“{q.quote}”</p>
               </div>
             </li>
           ))}

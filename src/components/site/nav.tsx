@@ -38,7 +38,7 @@ export function Nav() {
           <Image src="/images/polu-logo-purple.svg" alt="Polu" width={73} height={39} priority />
         </Link>
 
-        <ul className="hidden items-center gap-10 md:flex">
+        <ul className="hidden items-center gap-8 lg:flex xl:gap-10">
           {links.map((l) => (
             <li key={l.href}>
               <Link
@@ -54,7 +54,7 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link href="/login" className="px-4 text-body font-bold text-ink hover:text-primary">
             Log in
           </Link>
@@ -65,7 +65,7 @@ export function Nav() {
 
         <button
           type="button"
-          className="flex size-10 cursor-pointer flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex size-10 cursor-pointer flex-col items-center justify-center gap-1.5 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -77,7 +77,7 @@ export function Nav() {
       </nav>
 
       {open && (
-        <div className="border-t border-neutral-100 bg-white px-6 pt-4 pb-6 md:hidden">
+        <div className="border-t border-neutral-100 bg-white px-6 pt-4 pb-6 lg:hidden">
           <ul className="flex flex-col gap-1">
             {links.map((l) => (
               <li key={l.href}>

@@ -26,14 +26,14 @@ const features = [
 
 export function Features() {
   return (
-    <section className="bg-neutral-50 py-24">
+    <section className="bg-neutral-50 py-16 sm:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
         <SectionHeading
           eyebrow="Features"
           title="Printing without the back and forth"
           caption="Everything you’d normally chase a print shop for, in one place."
         />
-        <div className="mt-16 flex flex-col gap-16 lg:gap-6">
+        <div className="mt-10 flex flex-col gap-12 sm:mt-16 sm:gap-16 lg:gap-6">
           {features.map((f, i) => (
             <div
               key={f.title}
@@ -42,13 +42,13 @@ export function Features() {
                 i % 2 === 1 && "lg:[&>*:first-child]:order-2",
               )}
             >
-              <div className="flex aspect-[1.6] items-center justify-center overflow-hidden rounded-2xl bg-primary p-8">
+              <div className="flex items-center justify-center overflow-hidden rounded-2xl bg-primary px-5 py-10 sm:p-8 lg:aspect-[1.6]">
                 {f.visual}
               </div>
               <div className="flex max-w-[460px] flex-col gap-3">
                 <span className="text-body font-bold text-primary">0{i + 1}</span>
-                <h3 className="text-[28px] leading-9 font-extrabold text-ink">{f.title}</h3>
-                <p className="text-lg leading-7 text-neutral-700">{f.body}</p>
+                <h3 className="text-2xl leading-8 font-extrabold text-ink sm:text-[28px] sm:leading-9">{f.title}</h3>
+                <p className="text-body text-neutral-700 sm:text-lg sm:leading-7">{f.body}</p>
               </div>
             </div>
           ))}
@@ -58,7 +58,7 @@ export function Features() {
   );
 }
 
-const card = "w-full max-w-[380px] rounded-xl bg-white p-6 shadow-card";
+const card = "w-full max-w-[380px] rounded-xl bg-white p-4 shadow-card sm:p-6";
 
 function UploadMock() {
   return (

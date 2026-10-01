@@ -57,17 +57,17 @@ export default function BecomeAHostPage() {
   return (
     <>
       <section className="px-3 sm:px-6">
-        <div className="relative mx-auto grid max-w-[1392px] items-center gap-10 overflow-hidden rounded-[28px] bg-primary px-6 py-16 sm:px-12 lg:grid-cols-[1fr_1.1fr] lg:py-24">
+        <div className="relative mx-auto grid max-w-[1392px] items-center gap-10 overflow-hidden rounded-[28px] bg-primary p-3 sm:px-12 sm:py-16 lg:py-20 xl:grid-cols-[1fr_1.1fr] xl:py-24">
           <Scallop className="absolute -right-24 -bottom-40 size-[460px] text-white/10" />
 
-          <div className="relative flex flex-col gap-6 rounded-2xl bg-white p-8 shadow-card sm:p-10">
+          <div className="relative flex max-w-[680px] flex-col gap-6 rounded-[20px] bg-white p-6 shadow-card sm:p-10 xl:max-w-none">
             <span className="self-start rounded-full bg-secondary-200 px-3 py-1 text-body-sm font-bold">
               For printers & riders
             </span>
-            <h1 className="text-[40px] leading-[1.05] font-extrabold tracking-tight text-ink sm:text-[56px]">
+            <h1 className="text-[34px] leading-[1.08] font-extrabold tracking-tight text-ink sm:text-[48px] lg:text-[56px]">
               Turn your press into a busy one
             </h1>
-            <p className="text-lg leading-7 text-neutral-700">
+            <p className="text-body text-neutral-700 sm:text-lg sm:leading-7">
               Join Polu as a merchant or delivery rider. We bring the customers, the payments and
               the tracking. You do what you do best.
             </p>
@@ -81,18 +81,18 @@ export default function BecomeAHostPage() {
             </div>
           </div>
 
-          <div className="relative hidden lg:block">
+          <div className="relative hidden xl:block">
             <QueueMock />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1240px] px-6 py-24">
+      <section className="mx-auto max-w-[1240px] px-6 py-16 sm:py-24">
         <SectionHeading
           eyebrow="Why host with Polu"
           title="Everything you need to grow"
         />
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {benefits.map((b) => (
             <li key={b.title} className="flex flex-col gap-4 rounded-2xl border border-neutral-100 p-6">
               <span className="flex size-12 items-center justify-center rounded-xl bg-primary-50 text-primary">
@@ -109,9 +109,9 @@ export default function BecomeAHostPage() {
 
       <HostStories />
 
-      <section id="faq" className="mx-auto max-w-[1240px] scroll-mt-28 px-6 py-24">
+      <section id="faq" className="mx-auto max-w-[1240px] scroll-mt-28 px-6 py-16 sm:py-24">
         <SectionHeading align="left" eyebrow="FAQ" title="Questions, answered" />
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2">
           {faqs.map((f) => (
             <details
               key={f.q}

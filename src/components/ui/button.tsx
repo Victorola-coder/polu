@@ -25,7 +25,7 @@ type Common = {
 };
 
 const base =
-  "group inline-flex items-center justify-center gap-2 font-bold text-body transition-colors duration-200 cursor-pointer disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
+  "group inline-flex items-center justify-center gap-2 whitespace-nowrap font-bold text-body transition-colors duration-200 cursor-pointer disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 function Content({ icon, loading, children }: Omit<Common, "variant" | "className">) {
   if (loading) {

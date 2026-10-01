@@ -57,8 +57,8 @@ const socials = [
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
-      <div className="mx-auto grid max-w-[1320px] gap-12 px-6 pt-16 pb-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
-        <div className="flex flex-col gap-4">
+      <div className="mx-auto grid max-w-[1320px] grid-cols-2 gap-x-6 gap-y-10 px-6 pt-14 pb-10 sm:grid-cols-3 md:grid-cols-[1.4fr_repeat(3,1fr)] md:gap-12 md:pt-16">
+        <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 md:col-span-1">
           <Image src="/images/polu-logo.svg" alt="Polu" width={73} height={39} />
           <p className="max-w-[260px] text-body text-white/60">One destination for all prints.</p>
           <div className="mt-2 flex gap-3">

@@ -27,10 +27,10 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-[32px] leading-[1.15] font-extrabold tracking-tight text-ink sm:text-[44px]">
+      <h2 className="text-[28px] leading-[1.15] font-extrabold tracking-tight text-balance text-ink sm:text-[36px] lg:text-[44px]">
         {title}
       </h2>
-      {caption && <p className="text-lg leading-7 text-neutral-700">{caption}</p>}
+      {caption && <p className="text-body text-neutral-700 sm:text-lg sm:leading-7">{caption}</p>}
     </div>
   );
 }

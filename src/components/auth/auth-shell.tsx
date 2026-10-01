@@ -15,7 +15,7 @@ type Props = {
 export function AuthShell({ prompt, illustration, children }: Props) {
   return (
     <div className="flex min-h-dvh flex-col bg-primary">
-      <header className="mx-auto flex w-full max-w-[1328px] items-center justify-between px-6 pt-6">
+      <header className="mx-auto flex w-full max-w-[1328px] items-center justify-between px-4 pt-5 sm:px-6 sm:pt-6">
         <Link href="/" aria-label="Polu home">
           <Image src="/images/polu-logo.svg" alt="Polu" width={73} height={39} priority />
         </Link>
@@ -32,7 +32,7 @@ export function AuthShell({ prompt, illustration, children }: Props) {
 
       <main
         className={cn(
-          "mx-auto flex w-full max-w-[1288px] flex-1 items-center px-6 py-12",
+          "mx-auto flex w-full max-w-[1288px] flex-1 items-center px-4 py-8 sm:px-6 sm:py-12",
           illustration ? "justify-center lg:justify-between lg:gap-12" : "justify-center",
         )}
       >
@@ -66,7 +66,7 @@ export function AuthCard({
   return (
     <div
       className={cn(
-        "w-full max-w-[530px] rounded-xl bg-white px-6 pt-10 pb-12 shadow-card sm:px-10",
+        "w-full max-w-[530px] rounded-xl bg-white px-5 pt-8 pb-10 shadow-card sm:px-10 sm:pt-10 sm:pb-12",
         center && "text-center",
         className,
       )}

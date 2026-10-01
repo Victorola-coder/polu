@@ -49,7 +49,7 @@ export function OtpInput({ value, onChange, length = 4 }: Props) {
   };
 
   return (
-    <div className="flex items-center justify-center gap-4 sm:gap-6" role="group" aria-label="Verification code">
+    <div className="flex items-center justify-center gap-3 sm:gap-6" role="group" aria-label="Verification code">
       {digits.map((digit, i) => (
         <input
           key={i}
@@ -66,7 +66,7 @@ export function OtpInput({ value, onChange, length = 4 }: Props) {
           maxLength={1}
           aria-label={`Digit ${i + 1}`}
           className={cn(
-            "h-[62px] w-16 rounded-lg border bg-neutral-50 text-center text-h5 text-ink outline-none transition-colors focus:border-primary-600",
+            "h-14 w-full max-w-16 min-w-0 rounded-lg border sm:h-15.5 bg-neutral-50 text-center text-h5 text-ink outline-none transition-colors focus:border-primary-600",
             i === active && value.length < length ? "border-primary-600" : "border-neutral-100",
           )}
         />
