@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { AuthCard, AuthShell } from "@/components/auth/auth-shell";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonLink } from "@/components/ui/button";
 import { PasswordInput } from "@/components/ui/input";
-import { passwordError, resetPassword } from "@/lib/auth";
+import { passwordError, resetPassword } from "@/lib/auth-actions";
 
 export function ResetPasswordForm({ token }: { token: string }) {
   const router = useRouter();
@@ -23,9 +23,32 @@ export function ResetPasswordForm({ token }: { token: string }) {
     setErrors(next);
     if (next.password || next.confirm) return;
     setBusy(true);
-    await resetPassword(token, password);
-    router.push("/login");
+    try {
+      await resetPassword(token, password);
+      router.push("/login?reset=1");
+    } catch (err) {
+      setErrors({ password: (err as Error).message });
+      setBusy(false);
+    }
   };
+
+  if (!token) {
+    return (
+      <AuthShell>
+        <AuthCard center className="flex max-w-[420px] flex-col items-center gap-6">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-xl leading-7 font-extrabold text-ink">This link doesn’t work</h1>
+            <p className="text-body-sm text-neutral-600">
+              The reset link is missing or has expired. Request a new one and use it within an hour.
+            </p>
+          </div>
+          <ButtonLink href="/forgot-password" className="w-full">
+            Send a new link
+          </ButtonLink>
+        </AuthCard>
+      </AuthShell>
+    );
+  }
 
   return (
     <AuthShell>

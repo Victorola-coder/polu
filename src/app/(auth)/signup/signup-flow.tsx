@@ -8,13 +8,14 @@ import { VerifyCode } from "@/components/auth/verify-code";
 import { Button } from "@/components/ui/button";
 import { Input, PasswordInput } from "@/components/ui/input";
 import {
+  continueWithGoogle,
   emailError,
   passwordError,
   signUp,
   verifyEmail,
   type Role,
   type SignUpInput,
-} from "@/lib/auth";
+} from "@/lib/auth-actions";
 import { cn } from "@/lib/cn";
 
 type Step = "details" | "role" | "verify";
@@ -59,6 +60,7 @@ export function SignUpFlow() {
   const [busy, setBusy] = useState(false);
   const [verifyError, setVerifyError] = useState<string>();
   const [created, setCreated] = useState(false);
+  const [formError, setFormError] = useState<string>();
 
   const update = (key: keyof SignUpInput) => (e: { target: { value: string } }) => {
     setDetails((d) => ({ ...d, [key]: e.target.value }));
@@ -80,9 +82,24 @@ export function SignUpFlow() {
   const submitRole = async (e: FormEvent) => {
     e.preventDefault();
     setBusy(true);
-    await signUp({ ...details, role });
-    setBusy(false);
-    setStep("verify");
+    setFormError(undefined);
+    try {
+      await signUp({ ...details, role });
+      setStep("verify");
+    } catch (err) {
+      setFormError((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const google = async () => {
+    setFormError(undefined);
+    try {
+      await continueWithGoogle();
+    } catch {
+      setFormError("Google sign-in isn’t available yet. Use your email for now.");
+    }
   };
 
   const verify = async (code: string) => {
@@ -91,7 +108,7 @@ export function SignUpFlow() {
     try {
       await verifyEmail(details.email, code);
       setCreated(true);
-      setTimeout(() => router.push("/"), 1800);
+      setTimeout(() => router.push("/dashboard"), 1500);
     } catch (err) {
       setVerifyError((err as Error).message);
       setBusy(false);
@@ -164,9 +181,10 @@ export function SignUpFlow() {
                 OR
                 <span className="h-px flex-1 bg-neutral-100" />
               </div>
-              <Button type="button" variant="ghost" icon="google" className="w-full">
+              <Button type="button" variant="ghost" icon="google" className="w-full" onClick={google}>
                 Sign up with Google
               </Button>
+              {formError && <p className="text-center text-body-sm text-red-500">{formError}</p>}
             </div>
           </form>
         </AuthCard>
@@ -209,6 +227,7 @@ export function SignUpFlow() {
             </fieldset>
 
             <div className="flex flex-col gap-3">
+              {formError && <p className="text-center text-body-sm text-red-500">{formError}</p>}
               <Button type="submit" className="w-full" loading={busy}>
                 Continue
               </Button>

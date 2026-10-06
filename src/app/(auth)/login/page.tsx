@@ -7,6 +7,7 @@ export const metadata: Metadata = pageMetadata(
   "Log in to Polu to place and track your print orders.",
 );
 
-export default function LoginPage() {
-  return <LoginForm />;
+export default async function LoginPage({ searchParams }: PageProps<"/login">) {
+  const { reset } = await searchParams;
+  return <LoginForm notice={reset ? "Password updated. Log in with your new password." : undefined} />;
 }

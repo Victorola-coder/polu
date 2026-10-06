@@ -5,7 +5,7 @@ import { AuthCard, AuthShell } from "@/components/auth/auth-shell";
 import { BackToLogin } from "@/components/auth/back-to-login";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { emailError, requestPasswordReset } from "@/lib/auth";
+import { emailError, requestPasswordReset } from "@/lib/auth-actions";
 
 export function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -19,9 +19,14 @@ export function ForgotPasswordForm() {
     setError(err ?? undefined);
     if (err) return;
     setBusy(true);
-    await requestPasswordReset(email);
-    setBusy(false);
-    setSent(true);
+    try {
+      await requestPasswordReset(email);
+      setSent(true);
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
   };
 
   if (sent) {

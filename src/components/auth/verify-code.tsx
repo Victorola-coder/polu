@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { OtpInput } from "@/components/ui/otp-input";
-import { resendCode } from "@/lib/auth";
+import { resendCode } from "@/lib/auth-actions";
 import { AuthCard } from "./auth-shell";
 
 const RESEND_SECONDS = 120;
@@ -26,11 +26,18 @@ export function VerifyCode({ email, verifying, success, error, onVerify }: Props
     return () => clearTimeout(id);
   }, [seconds]);
 
+  const [resendError, setResendError] = useState<string>();
+
   const resend = async () => {
     if (seconds > 0) return;
-    await resendCode(email);
-    setSeconds(RESEND_SECONDS);
-    setCode("");
+    setResendError(undefined);
+    try {
+      await resendCode(email);
+      setSeconds(RESEND_SECONDS);
+      setCode("");
+    } catch (err) {
+      setResendError((err as Error).message);
+    }
   };
 
   const time = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
@@ -83,6 +90,7 @@ export function VerifyCode({ email, verifying, success, error, onVerify }: Props
                 Click here to get a new one
               </button>
             </p>
+            {resendError && <p className="text-red-500">{resendError}</p>}
             {seconds > 0 && (
               <p className="text-ink">
                 Resend code in <span className="text-success">{time}</span> minutes
